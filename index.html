@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        main {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .todo {
+            width: 400px;
+            height: 500px;
+            position: relative;
+
+        }
+
+        .todo>div {
+            position: absolute;
+            border-radius: 5px;
+            width: 100%;
+            height: 100%;
+            transition: .4s;
+        }
+
+        .todo>div:nth-child(1) {
+            border: 1px solid red;
+        }
+
+        .todo>div:nth-child(2) {
+            background: linear-gradient(coral, rgb(255, 82, 101));
+
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-content: space-around;
+            animation: anime 2s infinite alternate;
+
+        }
+
+        .todo>div:nth-child(2)>h2 {
+            font-family: 'Rubik Moonrocks', cursive;
+            font-size: 18px;
+        }
+
+        .todo>div:nth-child(2)>button {
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            width: 100px;
+            color: rgb(255, 82, 101);
+            font-size: 20px;
+            font-family: 'Rubik Moonrocks', cursive;
+            cursor: pointer;
+            transition: .5s;
+        }
+
+        .todo>div:nth-child(2)>button:hover {
+            background-color: rgb(176, 57, 71);
+            color: white;
+        }
+
+        .move {
+            transform: translateX(-300px);
+        }
+
+        .move1 {
+            transform: translateX(80px);
+        }
+        #list{}
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="todo">
+            <div>
+                <h3>ToDo-list</h3>
+                <ul id="list">
+                    <li>
+                        <span>
+                            <i class="material-icons">crop_square</i>
+                            <p>Sample Text</p>
+                        </span>
+                        <span>
+                            <i class="fa fa-trash"></i>
+                            <i class="material-icons">edit</i>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h2>Hello welcome to brand new To Do list</h2>
+                <button onclick="move()">Start</button>
+            </div>
+        </div>
+    </main>
+    <script>
+        function move() {
+            document.querySelector('.todo>div:nth-of-type(2)').classList.toggle('move')
+            document.querySelector('.todo>div:nth-of-type(1)').classList.toggle('move1')
+
+        }
+    </script>
+</body>
+
+</html>
