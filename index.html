@@ -56,7 +56,7 @@
             justify-content: center;
             flex-wrap: wrap;
             align-content: space-around;
-            /* display: none; */
+            display: none;
         }
 
         .todo>div:nth-child(2)>h2 {
@@ -101,12 +101,11 @@
         }
 
         #list {
-            height: 350px;
+            max-height: 350px;
             overflow: scroll;
             padding: 5px;
             display: flex;
-            justify-content: center;
-            align-items: flex-start;
+            justify-content: center;     
             flex-wrap: wrap;
             background-color: white;
             margin: 5px;
